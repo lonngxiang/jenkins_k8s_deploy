@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web3  ##depolymet名
+spec:
+  selector:
+    matchLabels:
+      app: web3
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: web3 # pod名
+    spec:
+      containers:
+      - name: web
+        imagePullPolicy: IfNotPresent
+        image: registry.cn-hangzhou.aliyuncs.com/loongxl/sanic:v1
+        ports:
+        - containerPort: 8080
+
