@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web3
+spec:
+  ports:
+  - port: 9000 # 服务端口
+    protocol: TCP
+    targetPort: 8080 # 容器端口
+  selector:
+    app: web3 # 标签选择器，这里的app=web正是我们刚才建立app
